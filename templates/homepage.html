@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Inicio - NutriApp{% endblock %}
+{% block content %}
+
+<div class="card">
+  <h2>Bienvenido a NutriApp</h2>
+  <p>¡Empieza tu plan nutricional!</p>
+  <a href="{{ url_for('search') }}" class="btn">Buscar Alimento</a>
+</div>
+
+{% endblock %}
