@@ -1,0 +1,127 @@
+body {
+    background-color: #ffff;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+.nav-tabs .nav-link {
+    color: #555;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #f28c82;
+    color: white;
+    border-radius: 5px;
+}
+
+.recipe-card {
+    background: #eff8e2;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.recipe-card img {
+    max-width: 80px;
+}
+
+.favorite-icon {
+    color: green;
+    font-size: 1.5rem;
+    float: right;
+}
+
+.search-btn {
+    background-color: #8FCF7D;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 20px;
+} 
+
+.custom-tabs {
+    border: none;
+    display: flex;
+    border-radius: 15px;
+}
+
+.custom-tabs .nav-link {
+    color: #F28C82;
+    font-weight: bold;
+    border-radius: 15px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.custom-tabs .nav-link.active {
+    color: white;
+}
+
+.recipe-card {
+    background-color: #F6FBF4; /* Fondo verde claro */
+    border-radius: 15px;
+    position: relative;
+}
+
+.recipe-img {
+    max-width: 80px; /* Tamaño adecuado para la imagen */
+}
+
+.favorite-icon {
+    color: #8FCF7D; /* Verde pastel */
+    font-size: 1.5rem;
+}
+
+.btn-success {
+    background-color: #9dc58e; /* Verde pastel */
+    color: white;
+    border: none;
+}
+
+.navbar {
+    height: 70px;
+}
+
+.nav-container {
+    gap: 10px; /* Reduce el espacio entre los iconos */
+}
+
+.center-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+}
+
+.btn-lg {
+    width: 60px;
+    height: 60px;
+    background-color: #8FCF7D;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-green {
+    color: #8FCF7D;
+    font-size: 22px; /* Ajustar el tamaño del ícono */
+}
+
+.icon-gray {
+    color: gray;
+    font-size: 22px; /* Ajustar el tamaño del ícono */
+}
+
+/* Colores
+morado: #9e9bc7
+verde: #91c788
+amarillo claro: #fff8eb
+amarillo del signo mas: #ffd485
+gris: #f4f4f4
+rojo medio melon: #ff9385
+
+
+*/
+

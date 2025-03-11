@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="tab-container">
+  <ul class="tabs">
+    <li class="active" onclick="openTab(event, 'alimentos')">Alimentos</li>
+    <li onclick="openTab(event, 'mis-platos')">Mis Platos</li>
+  </ul>
+
+  <!-- Tab: Alimentos -->
+  <div id="alimentos" class="tab-content active">
+    <div class="food-grid">
+      <div class="food-item">
+        <img src="https://img.icons8.com/emoji/48/000000/cupcake.png" alt="Cupcake">
+        <p>Cupcake</p>
+      </div>
+      <div class="food-item">
+        <img src="https://img.icons8.com/emoji/48/000000/hamburger.png" alt="Hamburger">
+        <p>Hamburguesa</p>
+      </div>
+      <div class="food-item">
+        <img src="https://img.icons8.com/emoji/48/000000/pizza.png" alt="Pizza">
+        <p>Pizza</p>
+      </div>
+      <div class="food-item">
+        <img src="https://img.icons8.com/emoji/48/000000/cookie.png" alt="Cookie">
+        <p>Cookie</p>
+      </div>
+      <div class="food-item">
+        <img src="https://img.icons8.com/emoji/48/000000/hot-dog.png" alt="Hot Dog">
+        <p>Hot Dog</p>
+      </div>
+      <div class="food-item plus-icon">
+        <p>+</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Mis Platos -->
+  <div id="mis-platos" class="tab-content">
+    <div class="dish-card">
+      <h4>Chopped Spring Ramen</h4>
+      <p>250 Kcal | Scallions & Tomatoes</p>
+    </div>
+    <div class="dish-card">
+      <h4>Chicken Tandoori</h4>
+      <p>450 Kcal | Chicken & Salad</p>
+    </div>
+    <!-- Agrega más platos si deseas -->
+    <button class="buscar-btn">Busca Plato</button>
+  </div>
+</div>
+
+<!-- Agrega un pequeño script para cambiar de pestaña -->
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].classList.remove("active");
+  }
+  tablinks = document.getElementsByClassName("tabs")[0].getElementsByTagName("li");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
+  }
+  document.getElementById(tabName).classList.add("active");
+  evt.currentTarget.classList.add("active");
+}
+</script>
+
+{% endblock %}

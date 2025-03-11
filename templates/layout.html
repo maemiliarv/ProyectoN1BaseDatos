@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites - Recipes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container mt-5 mb-3">
+        <h2 class="text-center">Favorites</h2>
+
+        <!-- Tabs -->
+        <ul class="nav nav-tabs custom-tabs justify-content-center mt-4">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Mis Platos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Alimentos</a>
+            </li>
+        </ul>
+
+        <!-- Lista de Recetas -->
+        <div class="m-4">
+            {% for recipe in recipes %}
+            <div class="card recipe-card shadow-sm border-0 p-3">
+              <div class="row g-0 align-items-center">
+                  <!-- Imagen a la izquierda -->
+                  <div class="col-md-3 d-flex justify-content-center">
+                      <img src="{{ url_for('static', filename=recipe.image) }}" class="img-fluid recipe-img" alt="{{ recipe.name }}">
+                  </div>
+                  
+                  <!-- Contenido de la receta -->
+                  <div class="col-md-8 ps-3">
+                      <div class="card-body">
+                          <p class="text-success fw-bold mb-1">{{ recipe.calories }} Kcal</p>
+                          <h5 class="card-title text-dark fw-bold">{{ recipe.name }}</h5>
+                          <p class="card-text text-muted">{{ recipe.ingredients }}</p>
+                      </div>
+                  </div>
+          
+                  <!-- Ícono de favorito en la esquina superior derecha -->
+                  <div class="col-md-1 d-flex align-items-start justify-content-end">
+                      <span class="favorite-icon">&#x1F49A;</span> <!-- Icono de corazón verde -->
+                  </div>
+              </div>
+          </div>          
+            {% endfor %}
+        </div>
+
+        <!-- Botón de Búsqueda -->
+        <div class="d-flex justify-content-center mt-4">
+            <button class="btn btn-success search-btn">Busca Plato 🔍</button>
+        </div>
+    </div>
+
+    <!-- Navbar con enlaces a las páginas -->
+    <nav class="navbar fixed-bottom navbar-light bg-white">
+        <div class="container d-flex justify-content-evenly align-items-center">
+            <!-- Icono de Inicio -->
+            <a href="{{ url_for('home') }}" class="nav-link">
+                <i class="bi bi-house-door-fill icon-green"></i>
+            </a>
+            
+            <!-- Icono de Búsqueda -->
+            <a href="{{ url_for('scan') }}" class="nav-link">
+                <i class="bi bi-search icon-gray"></i>
+            </a>
+
+            <!-- Botón Central Destacado -->
+            <div class="center-btn">
+                <a href="{{ url_for('scan') }}" class="btn btn-success rounded-circle btn-lg">
+                    <i class="bi bi-qr-code-scan"></i>
+                </a>
+            </div>
+
+            <!-- Icono de Favoritos -->
+            <a href="{{ url_for('favorites') }}" class="nav-link">
+                <i class="bi bi-heart icon-gray"></i>
+            </a>
+
+            <!-- Icono de Usuario -->
+            <a href="{{ url_for('profile') }}" class="nav-link">
+                <i class="bi bi-person icon-gray"></i>
+            </a>
+        </div>
+    </nav>  
+
+</body>
+</html>
